@@ -99,12 +99,12 @@ namespace ETS_Proyecto_V
                 switch (option.KeyChar)
                 {
                     case '1': CalcularMaximo(NumerosArray); break;
-                    case '2': CalcularMinimo(); break;
-                    case '3': CalcularLaMediana(); break;
-                    case '4': CalcularLaMedia(); break;
-                    case '5': OrdenarDeMenorAMayor(); break;
-                    case '6': DesviacionTipica(); break;
-                    case '7': BinarizarEnBaseAUnNumero(); break;
+                    case '2': CalcularMinimo(NumerosArray); break;
+                    case '3': CalcularLaMediana(NumerosArray); break;
+                    case '4': CalcularLaMedia(NumerosArray); break;
+                    case '5': OrdenarDeMenorAMayor(NumerosArray); break;
+                    case '6': DesviacionTipica(NumerosArray); break;
+                    case '7': BinarizarEnBaseAUnNumero(NumerosArray); break;
                 }
             } while (!option.KeyChar.Equals('8'));
 
@@ -132,27 +132,27 @@ namespace ETS_Proyecto_V
         {
 
         }
-        public void CalcularMinimo()
+        public void CalcularMinimo(double[] Numeros)
         {
 
         }
-        public void CalcularLaMediana()
+        public void CalcularLaMediana(double[] Numeros)
         {
 
         }
-        public void CalcularLaMedia()
+        public void CalcularLaMedia(double[] Numeros)
         {
 
         }
-        public void OrdenarDeMenorAMayor()
+        public void OrdenarDeMenorAMayor(double[] Numeros)
         {
 
         }
-        public void DesviacionTipica()
+        public void DesviacionTipica(double[] Numeros)
         {
 
         }
-        public void BinarizarEnBaseAUnNumero()
+        public void BinarizarEnBaseAUnNumero(double[] Numeros)
         {
 
         }

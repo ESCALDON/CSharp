@@ -54,12 +54,12 @@ namespace ETS_Proyecto_V
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
-                    case '1': CalcularPrimo(); break;
-                    case '2': CalcularFactorial(); break;
-                    case '3': CambioAHorasDeSegundos(); break;
-                    case '4': Primeros15NumSeriePell(); break;
-                    case '5': NumeroArmstrong(); break;
-                    case '6': ComprobarNumeroDistintos(); break;
+                    case '1': CalcularPrimo(Numero); break;
+                    case '2': CalcularFactorial(Numero); break;
+                    case '3': CambioAHorasDeSegundos(Numero); break;
+                    case '4': Primeros15NumSeriePell(Numero); break;
+                    case '5': NumeroArmstrong(Numero); break;
+                    case '6': ComprobarNumeroDistintos(Numero); break;
                 }
             } while (!option.KeyChar.Equals('7'));
 
@@ -82,27 +82,27 @@ namespace ETS_Proyecto_V
             Console.WriteLine("- 7. Salir                                    -");
             Console.WriteLine("-----------------------------------------------");
         }
-        public void CalcularPrimo()
+        public void CalcularPrimo(int Numero)
         {
 
         }
-        public void CalcularFactorial()
+        public void CalcularFactorial(int Numero)
         {
 
         }
-        public void CambioAHorasDeSegundos()
+        public void CambioAHorasDeSegundos(int Numero)
         {
 
         }
-        public void Primeros15NumSeriePell()
+        public void Primeros15NumSeriePell(int Numero)
         {
 
         }
-        public void NumeroArmstrong()
+        public void NumeroArmstrong(int Numero)
         {
 
         }
-        public void ComprobarNumeroDistintos()
+        public void ComprobarNumeroDistintos(int Numero)
         {
 
         }
