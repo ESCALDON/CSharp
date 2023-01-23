@@ -8,16 +8,8 @@ namespace ETS_Proyecto_V
 {
     class Menu
     {
-        private Array myArrayList;
-        private NumeroEntero myEnteroList;
-        private String myStringList;
-        private Decimal myDecimalList;
         public Menu()
         {
-            this.myArrayList = new Array();
-            this.myEnteroList = new NumeroEntero();
-            this.myStringList = new String();
-            this.myDecimalList = new Decimal();
             ConsoleKeyInfo option;
             do
             {
@@ -25,10 +17,10 @@ namespace ETS_Proyecto_V
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
-                    case '1': myArrayList.GetNumerosArray(); myArrayList.GetTamanioArray(); myArrayList.MenuArray(); break;
-                    case '2': myEnteroList.GetNumeroEntero(); myEnteroList.MenuEntero(); break;
-                    case '3': myStringList.MenuString(); break;
-                    case '4': myDecimalList.GetNumeroDecimal(); myDecimalList.MenuDecimal(); break;
+                    case '1': Array.MenuArray(); break;
+                    case '2': NumeroEntero.MenuEntero(); break;
+                    case '3': String.MenuString(); break;
+                    case '4': Decimal.MenuDecimal(); break;
                 }
             } while (!option.KeyChar.Equals('5'));
 

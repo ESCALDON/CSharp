@@ -8,12 +8,12 @@ namespace ETS_Proyecto_V
 {
     class String
     {
-        public void MenuString()
+        static public void MenuString()
         {
             ConsoleKeyInfo option;
             do
             {
-                this.ShowMenu();
+                ShowMenu();
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
@@ -27,7 +27,7 @@ namespace ETS_Proyecto_V
             } while (!option.KeyChar.Equals('7'));
 
         }
-        private void ShowMenu()
+        static private void ShowMenu()
         {
             Console.Clear();
             Console.WriteLine("-----------------------------------------------");
@@ -45,27 +45,27 @@ namespace ETS_Proyecto_V
             Console.WriteLine("- 7. Salir                                    -");
             Console.WriteLine("-----------------------------------------------");
         }
-        public void CalcularPrimo()
+        static public void CalcularPrimo()
         {
 
         }
-        public void CalcularFactorial()
+        static public void CalcularFactorial()
         {
 
         }
-        public void CambioAHorasDeSegundos()
+        static public void CambioAHorasDeSegundos()
         {
 
         }
-        public void Primeros15NumSeriePell()
+        static public void Primeros15NumSeriePell()
         {
 
         }
-        public void NumeroArmstrong()
+        static public void NumeroArmstrong()
         {
 
         }
-        public void ComprobarNumeroDistintos()
+        static public void ComprobarNumeroDistintos()
         {
 
         }
