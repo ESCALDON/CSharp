@@ -3,35 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace ETS_Proyecto_V
 {
     class Decimal
     {
-        private decimal NumeroDecimal { get; set; }
+        static private decimal NumeroDecimal { get; set; }
         public Decimal()
         {
             Console.Clear();
-            this.NumeroDecimal = PedirNumeroDecimal();
+            NumeroDecimal = PedirNumeroDecimal();
         }
-        public decimal GetNumeroDecimal()
+        static public decimal GetNumeroDecimal()
         {
-            return (this.NumeroDecimal);
+            return (NumeroDecimal);
         }
-        public void SetNumeroDecimal()
+        static public void SetNumeroDecimal()
         {
-            this.NumeroDecimal = PedirNumeroDecimal();
+            NumeroDecimal = PedirNumeroDecimal();
         }
-        public int PedirNumeroDecimal()
+        static public decimal PedirNumeroDecimal()
         {
             Console.Clear();
             Boolean Completo = false;
-            int NumeroDecimal;
+            decimal NumeroDecimal;
             do
             {
                 Console.Clear();
-                Console.WriteLine("Introduzca el tamaño del array: ");
-                if (int.TryParse(Console.ReadLine(), out NumeroDecimal))
+                Console.WriteLine("Introduzca el número decimal: ");
+                if (decimal.TryParse(Console.ReadLine(), out NumeroDecimal))
                 {
                     Completo= true;
                 }
@@ -45,23 +46,23 @@ namespace ETS_Proyecto_V
 
             return (NumeroDecimal);
         }
-        public void MenuDecimal()
+        static public void MenuDecimal()
         {
             ConsoleKeyInfo option;
             do
             {
-                this.ShowMenu();
+                ShowMenu();
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
-                    case '1': RedondearAlAlza(NumeroDecimal); break;
-                    case '2': EliminarLosDecimales(NumeroDecimal); break;
-                    case '3': Ecuacion2Grado(NumeroDecimal); break;
+                    case '1': RedondearAlAlza(GetNumeroDecimal()); break;
+                    case '2': EliminarLosDecimales(GetNumeroDecimal()); break;
+                    case '3': Ecuacion2Grado(); break;
                 }
             } while (!option.KeyChar.Equals('4'));
 
         }
-        private void ShowMenu()
+        static private void ShowMenu()
         {
             Console.Clear();
             Console.WriteLine("----------------------------------------------------------------------");
@@ -76,17 +77,56 @@ namespace ETS_Proyecto_V
             Console.WriteLine("- 4. Salir                                                           -");
             Console.WriteLine("----------------------------------------------------------------------");
         }
-        public void RedondearAlAlza(decimal NumeroDecimal)
+        static public void RedondearAlAlza(decimal NumeroDecimal)
         {
-
+            Console.Clear();
+            Console.WriteLine("El resultado es: " + Math.Ceiling(NumeroDecimal));
+            Console.ReadKey();
         }
-        public void EliminarLosDecimales(decimal NumeroDecimal)
+        static public void EliminarLosDecimales(decimal NumeroDecimal)
         {
-
+            Console.Clear();
+            Console.WriteLine("El resultado es: " + Math.Truncate(NumeroDecimal));
+            Console.ReadKey();
         }
-        public void Ecuacion2Grado(decimal NumeroDecimal)
+        static public void Ecuacion2Grado()
         {
+            Console.Clear();
+            Boolean Completo = false;
+            double[] NumeroDecimal = new double[3];
+            double ResultadoPositivo;
+            double ResultadoNegativo;
 
+            for (int i = 0; i < NumeroDecimal.Length; i++)
+            {
+                do
+                {
+                    Console.Clear();
+                    Console.WriteLine("Introduzca el {0} número decimal: ", i+1);
+                    if (double.TryParse(Console.ReadLine(), out NumeroDecimal[i]))
+                    {
+                        Completo = true;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("ERROR: Debe introducir un número. \nIntentelo de nuevo");
+                        Console.ReadKey();
+                    }
+                } while (!Completo);
+            }
+
+            ResultadoPositivo = (-NumeroDecimal[1] + Math.Sqrt(Math.Pow(NumeroDecimal[1], 2) - 4 * NumeroDecimal[0] * NumeroDecimal[2])) / (2 * NumeroDecimal[0]);
+            ResultadoNegativo = (-NumeroDecimal[1] - Math.Sqrt(Math.Pow(NumeroDecimal[1], 2) - 4 * NumeroDecimal[0] * NumeroDecimal[2])) / (2 * NumeroDecimal[0]);
+
+            Console.Clear();
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("-           Ecuacion 2 Grado           -");
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("- Resultado positivo: {0}               ",ResultadoPositivo);
+            Console.WriteLine("- Resultado negativo: {0}               ",ResultadoNegativo);
+            Console.WriteLine("----------------------------------------");
+            Console.ReadKey();
         }
     }
 }

@@ -8,21 +8,21 @@ namespace ETS_Proyecto_V
 {
     class NumeroEntero
     {
-        private int Numero { get; set; }
+        static private int Numero { get; set; }
         public NumeroEntero()
         {
             Console.Clear();
-            this.Numero = PedirNumeroEntero();
+            Numero = PedirNumeroEntero();
         }
-        public int GetNumeroEntero()
+        static public int GetNumeroEntero()
         {
-            return (this.Numero);
+            return Numero;
         }
-        public void SetNumeroEntero()
+        static public void SetNumeroEntero()
         {
-            this.Numero = PedirNumeroEntero();
+            Numero = PedirNumeroEntero();
         }
-        public int PedirNumeroEntero()
+        static public int PedirNumeroEntero()
         {
             Console.Clear();
             Boolean Completo = false;
@@ -45,26 +45,26 @@ namespace ETS_Proyecto_V
 
             return (NumeroEntero);
         }
-        public void MenuEntero()
+        static public void MenuEntero()
         {
             ConsoleKeyInfo option;
             do
             {
-                this.ShowMenu();
+                ShowMenu();
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
-                    case '1': CalcularPrimo(Numero); break;
-                    case '2': CalcularFactorial(Numero); break;
-                    case '3': CambioAHorasDeSegundos(Numero); break;
-                    case '4': Primeros15NumSeriePell(Numero); break;
-                    case '5': NumeroArmstrong(Numero); break;
-                    case '6': ComprobarNumeroDistintos(Numero); break;
+                    case '1': CalcularPrimo(GetNumeroEntero()); break;
+                    case '2': CalcularFactorial(GetNumeroEntero()); break;
+                    case '3': CambioAHorasDeSegundos(GetNumeroEntero()); break;
+                    case '4': Primeros15NumSeriePell(GetNumeroEntero()); break;
+                    case '5': NumeroArmstrong(GetNumeroEntero()); break;
+                    case '6': ComprobarNumeroDistintos(GetNumeroEntero()); break;
                 }
             } while (!option.KeyChar.Equals('7'));
 
         }
-        private void ShowMenu()
+        static private void ShowMenu()
         {
             Console.Clear();
             Console.WriteLine("-----------------------------------------------");
@@ -82,27 +82,27 @@ namespace ETS_Proyecto_V
             Console.WriteLine("- 7. Salir                                    -");
             Console.WriteLine("-----------------------------------------------");
         }
-        public void CalcularPrimo(int Numero)
+        static public void CalcularPrimo(int Numero)
         {
 
         }
-        public void CalcularFactorial(int Numero)
+        static public void CalcularFactorial(int Numero)
         {
 
         }
-        public void CambioAHorasDeSegundos(int Numero)
+        static public void CambioAHorasDeSegundos(int Numero)
         {
 
         }
-        public void Primeros15NumSeriePell(int Numero)
+        static public void Primeros15NumSeriePell(int Numero)
         {
 
         }
-        public void NumeroArmstrong(int Numero)
+        static public void NumeroArmstrong(int Numero)
         {
 
         }
-        public void ComprobarNumeroDistintos(int Numero)
+        static public void ComprobarNumeroDistintos(int Numero)
         {
 
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\1º DAW 2\\ETS\\ETS Proyecto V\\CSharp\\ETS Proyecto V\\ETS Proyecto V.csproj": {}
+    "F:\\1º DAW 2\\ETS\\ETS Proyecto V\\CSharpBck\\ETS Proyecto V\\ETS Proyecto V.csproj": {}
   },
   "projects": {
-    "F:\\1º DAW 2\\ETS\\ETS Proyecto V\\CSharp\\ETS Proyecto V\\ETS Proyecto V.csproj": {
+    "F:\\1º DAW 2\\ETS\\ETS Proyecto V\\CSharpBck\\ETS Proyecto V\\ETS Proyecto V.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\1º DAW 2\\ETS\\ETS Proyecto V\\CSharp\\ETS Proyecto V\\ETS Proyecto V.csproj",
+        "projectUniqueName": "F:\\1º DAW 2\\ETS\\ETS Proyecto V\\CSharpBck\\ETS Proyecto V\\ETS Proyecto V.csproj",
         "projectName": "ETS Proyecto V",
-        "projectPath": "F:\\1º DAW 2\\ETS\\ETS Proyecto V\\CSharp\\ETS Proyecto V\\ETS Proyecto V.csproj",
+        "projectPath": "F:\\1º DAW 2\\ETS\\ETS Proyecto V\\CSharpBck\\ETS Proyecto V\\ETS Proyecto V.csproj",
         "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-        "outputPath": "F:\\1º DAW 2\\ETS\\ETS Proyecto V\\CSharp\\ETS Proyecto V\\obj\\",
+        "outputPath": "F:\\1º DAW 2\\ETS\\ETS Proyecto V\\CSharpBck\\ETS Proyecto V\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

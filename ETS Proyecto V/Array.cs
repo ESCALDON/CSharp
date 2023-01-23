@@ -8,31 +8,31 @@ namespace ETS_Proyecto_V
 {
     class Array
     {
-        private int TamanioArray { get; set; }
-        private double[] NumerosArray { get; set; }
+        static private int TamanioArray { get; set; }
+        static private double[]? NumerosArray { get; set; }
         public Array()
         {
             Console.Clear();
-            this.TamanioArray = PedirTamanioArray();
-            this.NumerosArray = PedirNumerosArray();
+            TamanioArray = PedirTamanioArray();
+            NumerosArray = PedirNumerosArray();
         }
-        public int GetTamanioArray()
+        static public int GetTamanioArray()
         {
-            return (this.TamanioArray);
+            return TamanioArray;
         }
-        public double[] GetNumerosArray()
+        static public double[] GetNumerosArray()
         {
-            return this.NumerosArray;
+            return NumerosArray;
         }
-        public void SetTamanioArray()
+        static public void SetTamanioArray()
         {
-            this.TamanioArray = PedirTamanioArray();
-        }  
-        public void SetNumerosArray()
-        {
-            this.NumerosArray = PedirNumerosArray();
+            TamanioArray = PedirTamanioArray();
         }
-        public int PedirTamanioArray()  
+        static public void SetNumerosArray()
+        {
+            NumerosArray = PedirNumerosArray();
+        }
+        static public int PedirTamanioArray()  
         {
             Console.Clear();
             Boolean Completo = false;
@@ -64,7 +64,7 @@ namespace ETS_Proyecto_V
 
             return (TamanioArray);
         }
-        public double[] PedirNumerosArray()
+        static public double[] PedirNumerosArray()
         {
             double[] PedirNumerosArray = new double[TamanioArray];
             Boolean Completo = false;
@@ -89,27 +89,27 @@ namespace ETS_Proyecto_V
             }
             return (PedirNumerosArray);
         }
-        public void MenuArray()
+        static public void MenuArray()
         {
             ConsoleKeyInfo option;
             do
             {
-                this.ShowMenu();
+                ShowMenu();
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
-                    case '1': CalcularMaximo(NumerosArray); break;
-                    case '2': CalcularMinimo(NumerosArray); break;
-                    case '3': CalcularLaMediana(NumerosArray); break;
-                    case '4': CalcularLaMedia(NumerosArray); break;
-                    case '5': OrdenarDeMenorAMayor(NumerosArray); break;
-                    case '6': DesviacionTipica(NumerosArray); break;
-                    case '7': BinarizarEnBaseAUnNumero(NumerosArray); break;
+                    case '1': GetTamanioArray(); GetNumerosArray() ; CalcularMaximo(NumerosArray); break;
+                    case '2': GetTamanioArray(); GetNumerosArray(); CalcularMinimo(NumerosArray); break;
+                    case '3': GetTamanioArray(); GetNumerosArray(); CalcularLaMediana(NumerosArray); break;
+                    case '4': GetTamanioArray(); GetNumerosArray(); CalcularLaMedia(NumerosArray); break;
+                    case '5': GetTamanioArray(); GetNumerosArray(); OrdenarDeMenorAMayor(NumerosArray); break;
+                    case '6': GetTamanioArray(); GetNumerosArray(); DesviacionTipica(NumerosArray); break;
+                    case '7': GetTamanioArray(); GetNumerosArray(); BinarizarEnBaseAUnNumero(NumerosArray); break;
                 }
             } while (!option.KeyChar.Equals('8'));
 
         }
-        private void ShowMenu()
+        static private void ShowMenu()
         {
             Console.Clear();
             Console.WriteLine("-----------------------------------------");
@@ -128,31 +128,31 @@ namespace ETS_Proyecto_V
             Console.WriteLine("- 8. Salir                              -");
             Console.WriteLine("-----------------------------------------");
         }
-        public void CalcularMaximo(double[] Numeros)
+        static public void CalcularMaximo(double[] Numeros)
         {
 
         }
-        public void CalcularMinimo(double[] Numeros)
+        static public void CalcularMinimo(double[] Numeros)
         {
 
         }
-        public void CalcularLaMediana(double[] Numeros)
+        static public void CalcularLaMediana(double[] Numeros)
         {
 
         }
-        public void CalcularLaMedia(double[] Numeros)
+        static public void CalcularLaMedia(double[] Numeros)
         {
 
         }
-        public void OrdenarDeMenorAMayor(double[] Numeros)
+        static public void OrdenarDeMenorAMayor(double[] Numeros)
         {
 
         }
-        public void DesviacionTipica(double[] Numeros)
+        static public void DesviacionTipica(double[] Numeros)
         {
 
         }
-        public void BinarizarEnBaseAUnNumero(double[] Numeros)
+        static public void BinarizarEnBaseAUnNumero(double[] Numeros)
         {
 
         }
