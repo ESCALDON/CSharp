@@ -6,33 +6,31 @@ using System.Threading.Tasks;
 
 namespace ETS_Proyecto_V
 {
-    class Array
+    class Arrays
     {
-        static private int TamanioArray { get; set; }
-        static private double[]? NumerosArray { get; set; }
-        public Array()
+        private int TamanioArray { get; set; }
+        private double[]? NumerosArray { get; set; }
+        public Arrays()
         {
-            Console.Clear();
-            TamanioArray = PedirTamanioArray();
-            NumerosArray = PedirNumerosArray();
+            
         }
-        static public int GetTamanioArray()
+        public int GetTamanioArray()
         {
             return TamanioArray;
         }
-        static public double[] GetNumerosArray()
+        public double[] GetNumerosArray()
         {
             return NumerosArray;
         }
-        static public void SetTamanioArray()
+        public void SetTamanioArray()
         {
             TamanioArray = PedirTamanioArray();
         }
-        static public void SetNumerosArray()
+        public void SetNumerosArray()
         {
             NumerosArray = PedirNumerosArray();
         }
-        static public int PedirTamanioArray()  
+        public int PedirTamanioArray()  
         {
             Console.Clear();
             Boolean Completo = false;
@@ -64,7 +62,7 @@ namespace ETS_Proyecto_V
 
             return (TamanioArray);
         }
-        static public double[] PedirNumerosArray()
+        public double[] PedirNumerosArray()
         {
             double[] PedirNumerosArray = new double[TamanioArray];
             Boolean Completo = false;
@@ -89,7 +87,7 @@ namespace ETS_Proyecto_V
             }
             return (PedirNumerosArray);
         }
-        static public void MenuArray()
+        public void MenuArray()
         {
             ConsoleKeyInfo option;
             do
@@ -104,12 +102,12 @@ namespace ETS_Proyecto_V
                     case '4': GetTamanioArray(); GetNumerosArray(); CalcularLaMedia(NumerosArray); break;
                     case '5': GetTamanioArray(); GetNumerosArray(); OrdenarDeMenorAMayor(NumerosArray); break;
                     case '6': GetTamanioArray(); GetNumerosArray(); DesviacionTipica(NumerosArray); break;
-                    case '7': GetTamanioArray(); GetNumerosArray(); BinarizarEnBaseAUnNumero(NumerosArray); break;
+                    case '7': BinarizarEnBaseAUnNumero(); break;
                 }
             } while (!option.KeyChar.Equals('8'));
 
         }
-        static private void ShowMenu()
+        private void ShowMenu()
         {
             Console.Clear();
             Console.WriteLine("-----------------------------------------");
@@ -128,31 +126,31 @@ namespace ETS_Proyecto_V
             Console.WriteLine("- 8. Salir                              -");
             Console.WriteLine("-----------------------------------------");
         }
-        static public void CalcularMaximo(double[] Numeros)
+        public void CalcularMaximo(double[] Numeros)
         {
 
         }
-        static public void CalcularMinimo(double[] Numeros)
+        public void CalcularMinimo(double[] Numeros)
         {
 
         }
-        static public void CalcularLaMediana(double[] Numeros)
+        public void CalcularLaMediana(double[] Numeros)
         {
 
         }
-        static public void CalcularLaMedia(double[] Numeros)
+        public void CalcularLaMedia(double[] Numeros)
         {
 
         }
-        static public void OrdenarDeMenorAMayor(double[] Numeros)
+        public void OrdenarDeMenorAMayor(double[] Numeros)
         {
 
         }
-        static public void DesviacionTipica(double[] Numeros)
+        public void DesviacionTipica(double[] Numeros)
         {
 
         }
-        static public void BinarizarEnBaseAUnNumero(double[] Numeros)
+        public void BinarizarEnBaseAUnNumero()
         {
 
         }

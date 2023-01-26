@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace ETS_Proyecto_V
 {
-    class NumeroEntero
+    class ClassNumeroEntero
     {
         static private int Numero { get; set; }
-        public NumeroEntero()
+        public ClassNumeroEntero()
         {
-            Console.Clear();
-            Numero = PedirNumeroEntero();
+            
         }
         static public int GetNumeroEntero()
         {
             return Numero;
         }
-        static public void SetNumeroEntero()
+        public void SetNumeroEntero()
         {
             Numero = PedirNumeroEntero();
         }
