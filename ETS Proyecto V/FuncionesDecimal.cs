@@ -7,23 +7,22 @@ using System.Xml.Schema;
 
 namespace ETS_Proyecto_V
 {
-    class Decimal
+    class ClassDecimal
     {
-        static private decimal NumeroDecimal { get; set; }
-        public Decimal()
+        private decimal NumeroDecimal { get; set; }
+        public ClassDecimal()
         {
-            Console.Clear();
-            NumeroDecimal = PedirNumeroDecimal();
+            
         }
-        static public decimal GetNumeroDecimal()
+        public decimal GetNumeroDecimal()
         {
             return (NumeroDecimal);
         }
-        static public void SetNumeroDecimal()
+        public void SetNumeroDecimal()
         {
             NumeroDecimal = PedirNumeroDecimal();
         }
-        static public decimal PedirNumeroDecimal()
+        public decimal PedirNumeroDecimal()
         {
             Console.Clear();
             Boolean Completo = false;
@@ -46,7 +45,7 @@ namespace ETS_Proyecto_V
 
             return (NumeroDecimal);
         }
-        static public void MenuDecimal()
+        public void MenuDecimal()
         {
             ConsoleKeyInfo option;
             do
@@ -62,7 +61,7 @@ namespace ETS_Proyecto_V
             } while (!option.KeyChar.Equals('4'));
 
         }
-        static private void ShowMenu()
+        private void ShowMenu()
         {
             Console.Clear();
             Console.WriteLine("----------------------------------------------------------------------");
@@ -77,19 +76,19 @@ namespace ETS_Proyecto_V
             Console.WriteLine("- 4. Salir                                                           -");
             Console.WriteLine("----------------------------------------------------------------------");
         }
-        static public void RedondearAlAlza(decimal NumeroDecimal)
+        public void RedondearAlAlza(decimal NumeroDecimal)
         {
             Console.Clear();
             Console.WriteLine("El resultado es: " + Math.Ceiling(NumeroDecimal));
             Console.ReadKey();
         }
-        static public void EliminarLosDecimales(decimal NumeroDecimal)
+        public void EliminarLosDecimales(decimal NumeroDecimal)
         {
             Console.Clear();
             Console.WriteLine("El resultado es: " + Math.Truncate(NumeroDecimal));
             Console.ReadKey();
         }
-        static public void Ecuacion2Grado()
+        public void Ecuacion2Grado()
         {
             Console.Clear();
             Boolean Completo = false;

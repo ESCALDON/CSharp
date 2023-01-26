@@ -8,6 +8,10 @@ namespace ETS_Proyecto_V
 {
     class Menu
     {
+        ClassNumeroEntero NumeroEntero = new ClassNumeroEntero();
+        Arrays ClassArrays = new Arrays();
+        ClassString ClassStrings = new ClassString();
+        ClassDecimal ClassDecimals = new ClassDecimal();
         public Menu()
         {
             ConsoleKeyInfo option;
@@ -17,10 +21,12 @@ namespace ETS_Proyecto_V
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
+
                     case '1': Arrays.MenuArray(); break;
                     case '2': NumeroEntero.MenuEntero(); break;
                     case '3': String.MenuString(); break;
                     case '4': Decimal.MenuDecimal(); break;
+
                 }
             } while (!option.KeyChar.Equals('5'));
 
