@@ -32,7 +32,7 @@ namespace ETS_Proyecto_V
         {
             NumerosArray = PedirNumerosArray();
         }
-        static public int PedirTamanioArray()  
+        static public int PedirTamanioArray()
         {
             Console.Clear();
             Boolean Completo = false;
@@ -41,12 +41,12 @@ namespace ETS_Proyecto_V
             {
                 Console.Clear();
                 Console.WriteLine("Introduzca el tamaño del array: ");
-                if (int.TryParse(Console.ReadLine(), out TamanioArray)) 
+                if (int.TryParse(Console.ReadLine(), out TamanioArray))
                 {
                     if (TamanioArray > 2)
                     {
                         Completo = true;
-                    } 
+                    }
                     else
                     {
                         Console.Clear();
@@ -98,13 +98,13 @@ namespace ETS_Proyecto_V
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
-                    case '1': GetTamanioArray(); GetNumerosArray() ; CalcularMaximo(NumerosArray); break;
+                    case '1': GetTamanioArray(); GetNumerosArray(); CalcularMaximo(NumerosArray); break;
                     case '2': GetTamanioArray(); GetNumerosArray(); CalcularMinimo(NumerosArray); break;
                     case '3': GetTamanioArray(); GetNumerosArray(); CalcularLaMediana(NumerosArray); break;
                     case '4': GetTamanioArray(); GetNumerosArray(); CalcularLaMedia(NumerosArray); break;
                     case '5': GetTamanioArray(); GetNumerosArray(); OrdenarDeMenorAMayor(NumerosArray); break;
                     case '6': GetTamanioArray(); GetNumerosArray(); DesviacionTipica(NumerosArray); break;
-                    case '7': GetTamanioArray(); GetNumerosArray(); BinarizarEnBaseAUnNumero(NumerosArray); break;
+                    case '7': BinarizarEnBaseAUnNumero(); break;
                 }
             } while (!option.KeyChar.Equals('8'));
 
@@ -131,7 +131,7 @@ namespace ETS_Proyecto_V
         static public void CalcularMaximo(double[] Numeros)
         {
             double numeroMaximo = 0;
-            
+
             for (int i = 0; i < Numeros.Length; i++)
             {
                 if (i == 0)
@@ -147,7 +147,8 @@ namespace ETS_Proyecto_V
                 }
             }
             MostrarVector(Numeros);
-            Console.WriteLine("El número máximo es: {0}",numeroMaximo);
+            Console.WriteLine("El número máximo es: {0}", numeroMaximo);
+            Console.ReadKey();
         }
         static public void CalcularMinimo(double[] Numeros)
         {
@@ -168,6 +169,7 @@ namespace ETS_Proyecto_V
             }
             MostrarVector(Numeros);
             Console.WriteLine("El número mínimo es: {0}", numeroMinimo);
+            Console.ReadKey();
         }
         static public void CalcularLaMediana(double[] Numeros)
         {
@@ -179,14 +181,15 @@ namespace ETS_Proyecto_V
                 double valorIntermedioMayor;
                 valorIntermedioMenor = Numeros[(Numeros.Length / 2) - 1];
                 valorIntermedioMayor = Numeros[(Numeros.Length / 2)];
-                mediana = valorIntermedioMenor + valorIntermedioMayor/2;
+                mediana = valorIntermedioMenor + valorIntermedioMayor / 2;
             }
             else
-            { 
+            {
                 double valorIntermedio;
                 double mitadVector = Numeros.Length / 2;
                 mediana = Numeros[Convert.ToInt32(Math.Truncate(mitadVector) + 1)];
             }
+            Console.ReadKey();
         }
         static public void CalcularLaMedia(double[] Numeros)
         {
@@ -200,11 +203,13 @@ namespace ETS_Proyecto_V
             MostrarVector(Numeros);
             Console.WriteLine("Sumatorio Total de todos los elementos: {0}", sumatorioTotal);
             Console.WriteLine("Media: {0}", media);
+            Console.ReadKey();
         }
         static public void OrdenarDeMenorAMayor(double[] Numeros)
         {
             Array.Sort(Numeros);
             MostrarVector(Numeros);
+            Console.ReadKey();
         }
         static public void DesviacionTipica(double[] Numeros)
         {
@@ -219,7 +224,7 @@ namespace ETS_Proyecto_V
                 sumatorioTotal += Numeros[i];
             }
             media = sumatorioTotal / Numeros.Length;
-           
+
 
             //Desviación típica
             for (int i = 0; i < Numeros.Length; i++)
@@ -231,11 +236,15 @@ namespace ETS_Proyecto_V
             desviacionTipica = Math.Sqrt(divisionDesviacion);
 
             Console.WriteLine("Deviación típica de los valores introducidos: {0}", desviacionTipica);
+            Console.ReadKey();
 
         }
-        static public void BinarizarEnBaseAUnNumero(double[] Numeros)
+        static public void BinarizarEnBaseAUnNumero()
         {
-
+            int numero = PedirNumeroEntero();
+            string numeroBinario = Convert.ToString(numero, 2);
+            Console.WriteLine("{0} en binario {1}", numero, numeroBinario);
+            Console.ReadKey();
         }
         static public void MostrarVector(double[] vector)
         {
@@ -244,6 +253,19 @@ namespace ETS_Proyecto_V
                 Console.Write("{0} ", vector[i]);
             }
             Console.WriteLine("");
+            Console.ReadKey();
         }
+
+        static public int PedirNumeroEntero()
+        {
+            int numero = 0;
+            Console.WriteLine("Introduzca un número entero:");
+            while (!Int32.TryParse(Console.ReadLine(), out numero) || !(numero > 0) )
+            {
+                Console.WriteLine("Error! Debe introducir un número entero. Inténtelo de nuevo");
+            }
+            return numero;   
+        }
+
     }
 }
