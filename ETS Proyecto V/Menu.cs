@@ -17,7 +17,7 @@ namespace ETS_Proyecto_V
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
-                    case '1': Array.MenuArray(); break;
+                    case '1': Arrays.MenuArray(); break;
                     case '2': NumeroEntero.MenuEntero(); break;
                     case '3': String.MenuString(); break;
                     case '4': Decimal.MenuDecimal(); break;
