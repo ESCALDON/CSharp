@@ -8,7 +8,7 @@ namespace ETS_Proyecto_V
 {
     class Menu
     {
-        ClassNumeroEntero NumeroEntero = new ClassNumeroEntero();
+        ClassNumeroEntero ClassNumeroEnteros = new ClassNumeroEntero();
         Arrays ClassArrays = new Arrays();
         ClassString ClassStrings = new ClassString();
         ClassDecimal ClassDecimals = new ClassDecimal();
@@ -22,7 +22,7 @@ namespace ETS_Proyecto_V
                 switch (option.KeyChar)
                 {
                     case '1': ClassArrays.MenuArray(); break;
-                    case '2': ClassNumeroEntero.MenuEntero(); break;
+                    case '2': ClassNumeroEnteros.MenuEntero(); break;
                     case '3': ClassStrings.MenuString(); break;
                     case '4': ClassDecimals.MenuDecimal(); break;
                 }
