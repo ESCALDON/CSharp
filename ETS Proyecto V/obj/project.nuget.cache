@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "hosn7daIDOJ/dA3TTEBEC6Exp0LUQCuPPLggr97qV6Pxmz5WWRm8KHV/EDR8l2lv5rX5MLSJdw8H+jR9d7fALQ==",
   "success": true,
   "projectFilePath": "E:\\1º DAW 2\\ETS\\ETS Proyecto V\\CSharpBck\\ETS Proyecto V\\ETS Proyecto V.csproj",
+=======
+  "dgSpecHash": "rqJARo7BUD4QAMBu9wSfYnamHoMMUKTEfxIDnpY4fgsBocv2hPFlSpUdCQcHAfnWdw+uvbdsTjuK/PoKvkGlhw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Samuel\\OneDrive\\1º DAW\\ETS - Entornos de desarrollo\\Proyectos\\PracticaV\\CSharp\\ETS Proyecto V\\ETS Proyecto V.csproj",
+>>>>>>> IvanBckp
   "expectedPackageFiles": [],
   "logs": []
 }
