@@ -96,7 +96,7 @@ namespace ETS_Proyecto_V
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
-                    case '1': GetTamanioArray(); GetNumerosArray() ; CalcularMaximo(NumerosArray); break;
+                    case '1': GetTamanioArray(); GetNumerosArray(); CalcularMaximo(NumerosArray); break;
                     case '2': GetTamanioArray(); GetNumerosArray(); CalcularMinimo(NumerosArray); break;
                     case '3': GetTamanioArray(); GetNumerosArray(); CalcularLaMediana(NumerosArray); break;
                     case '4': GetTamanioArray(); GetNumerosArray(); CalcularLaMedia(NumerosArray); break;
@@ -105,7 +105,6 @@ namespace ETS_Proyecto_V
                     case '7': BinarizarEnBaseAUnNumero(); break;
                 }
             } while (!option.KeyChar.Equals('8'));
-
         }
         private void ShowMenu()
         {

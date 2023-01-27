@@ -8,12 +8,12 @@ namespace ETS_Proyecto_V
 {
     class ClassNumeroEntero
     {
-        static private int Numero { get; set; }
+        private int Numero { get; set; }
         public ClassNumeroEntero()
         {
             
         }
-        static public int GetNumeroEntero()
+        public int GetNumeroEntero()
         {
             return Numero;
         }
@@ -21,7 +21,7 @@ namespace ETS_Proyecto_V
         {
             Numero = PedirNumeroEntero();
         }
-        static public int PedirNumeroEntero()
+        public int PedirNumeroEntero()
         {
             Console.Clear();
             Boolean Completo = false;
@@ -44,7 +44,7 @@ namespace ETS_Proyecto_V
 
             return (NumeroEntero);
         }
-        static public void MenuEntero()
+        public void MenuEntero()
         {
             ConsoleKeyInfo option;
             do
@@ -63,7 +63,7 @@ namespace ETS_Proyecto_V
             } while (!option.KeyChar.Equals('7'));
 
         }
-        static private void ShowMenu()
+        private void ShowMenu()
         {
             Console.Clear();
             Console.WriteLine("-----------------------------------------------");
@@ -81,27 +81,27 @@ namespace ETS_Proyecto_V
             Console.WriteLine("- 7. Salir                                    -");
             Console.WriteLine("-----------------------------------------------");
         }
-        static public void CalcularPrimo(int Numero)
+        public void CalcularPrimo(int Numero)
         {
 
         }
-        static public void CalcularFactorial(int Numero)
+        public void CalcularFactorial(int Numero)
         {
 
         }
-        static public void CambioAHorasDeSegundos(int Numero)
+        public void CambioAHorasDeSegundos(int Numero)
         {
 
         }
-        static public void Primeros15NumSeriePell(int Numero)
+        public void Primeros15NumSeriePell(int Numero)
         {
 
         }
-        static public void NumeroArmstrong(int Numero)
+        public void NumeroArmstrong(int Numero)
         {
 
         }
-        static public void ComprobarNumeroDistintos(int Numero)
+        public void ComprobarNumeroDistintos(int Numero)
         {
 
         }
