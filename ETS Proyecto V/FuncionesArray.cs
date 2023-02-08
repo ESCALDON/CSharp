@@ -96,13 +96,13 @@ namespace ETS_Proyecto_V
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
-                    case '1': GetTamanioArray(); GetNumerosArray(); CalcularMaximo(NumerosArray); break;
-                    case '2': GetTamanioArray(); GetNumerosArray(); CalcularMinimo(NumerosArray); break;
-                    case '3': GetTamanioArray(); GetNumerosArray(); CalcularLaMediana(NumerosArray); break;
-                    case '4': GetTamanioArray(); GetNumerosArray(); CalcularLaMedia(NumerosArray); break;
-                    case '5': GetTamanioArray(); GetNumerosArray(); OrdenarDeMenorAMayor(NumerosArray); break;
-                    case '6': GetTamanioArray(); GetNumerosArray(); DesviacionTipica(NumerosArray); break;
-                    case '7': GetTamanioArray(); GetNumerosArray(); BinarizarEnBaseAUnNumero(NumerosArray); break;
+                    case '1': SetTamanioArray(); SetNumerosArray(); CalcularMaximo(NumerosArray); break;
+                    case '2': SetTamanioArray(); SetNumerosArray(); CalcularMinimo(NumerosArray); break;
+                    case '3': SetTamanioArray(); SetNumerosArray(); CalcularLaMediana(NumerosArray); break;
+                    case '4': SetTamanioArray(); SetNumerosArray(); CalcularLaMedia(NumerosArray); break;
+                    case '5': SetTamanioArray(); SetNumerosArray(); OrdenarDeMenorAMayor(NumerosArray); break;
+                    case '6': SetTamanioArray(); SetNumerosArray(); DesviacionTipica(NumerosArray); break;
+                    case '7': SetTamanioArray(); SetNumerosArray(); BinarizarEnBaseAUnNumero(NumerosArray); break;
                 }
             } while (!option.KeyChar.Equals('8'));
         }
@@ -184,8 +184,9 @@ namespace ETS_Proyecto_V
             {
                 double valorIntermedio;
                 double mitadVector = Numeros.Length / 2;
-                mediana = Numeros[Convert.ToInt32(Math.Truncate(mitadVector) + 1)];
+                mediana = Numeros[Convert.ToInt32(Math.Truncate(mitadVector))];
             }
+            Console.WriteLine("La mediana es: " + mediana);
             Console.ReadKey();
         }
         static public void CalcularLaMedia(double[] Numeros)
@@ -198,13 +199,14 @@ namespace ETS_Proyecto_V
             }
             media = (sumatorioTotal / Numeros.Length);
             MostrarVector(Numeros);
-            Console.WriteLine("Sumatorio Total de todos los elementos: {0}", sumatorioTotal);
-            Console.WriteLine("Media: {0}", media);
+            Console.WriteLine("\nSumatorio Total de todos los elementos: {0}\n", sumatorioTotal);
+            Console.WriteLine("\nMedia: {0}", media);
             Console.ReadKey();
         }
         static public void OrdenarDeMenorAMayor(double[] Numeros)
         {
             Array.Sort(Numeros);
+            Console.WriteLine("Números ordenados de menor a Mayor:\n");
             MostrarVector(Numeros);
             Console.ReadKey();
         }
@@ -232,25 +234,31 @@ namespace ETS_Proyecto_V
             divisionDesviacion = sumatorioDesviacion / Numeros.Length;
             desviacionTipica = Math.Sqrt(divisionDesviacion);
 
-            Console.WriteLine("Deviación típica de los valores introducidos: {0}", desviacionTipica);
+            Console.WriteLine("Deviación típica (Poblacional) de los valores introducidos: {0}", desviacionTipica);
             Console.ReadKey();
 
         }
         static public int[] BinarizarEnBaseAUnNumero(double[] Numeros)
         {
             int[] binarizado = new int[Numeros.Length];
+            string binarizadoCadena = "";
             int numeroBase = PedirNumeroEntero();
             for (int i = 0; i < Numeros.Length; i++)
             {
                 if (numeroBase < Numeros[i])
                 {
                     binarizado[i] = 0;
+                    binarizadoCadena += "0";
                 }
                 else
                 {
                     binarizado[i] = 1;
+                    binarizadoCadena += "1";
                 }
             }
+            Console.WriteLine("Número binarizado en base a {0}:\n", numeroBase);
+            Console.WriteLine(binarizadoCadena);
+            Console.ReadKey();
             return binarizado;
         }
         static public void MostrarVector(double[] vector)
