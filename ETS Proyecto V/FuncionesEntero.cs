@@ -67,7 +67,7 @@ namespace ETS_Proyecto_V
         {
             Console.Clear();
             Console.WriteLine("-----------------------------------------------");
-            Console.WriteLine("-               Menu de Arrays                -");
+            Console.WriteLine("-               Menu de Enteros               -");
             Console.WriteLine("-----------------------------------------------");
             Console.WriteLine("-----------------------------------------------");
             Console.WriteLine("- Elige entre siguientes opciones             -");
