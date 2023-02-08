@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -91,6 +92,7 @@ namespace ETS_Proyecto_V
         public void PasarAMinúsculas()
         {
             string Cadena;
+            string CadenaMinus;
             Boolean Completo = false;
             do
             {
@@ -119,10 +121,10 @@ namespace ETS_Proyecto_V
                 }
             } while (!Completo);
 
-            Cadena.ToLower();
+            CadenaMinus=Cadena.ToLower();
 
             Console.Clear();
-            Console.WriteLine(Cadena);
+            Console.WriteLine(CadenaMinus);
             Console.ReadKey();
         }
         public void CuantasRepeticionLetra()
@@ -309,6 +311,7 @@ namespace ETS_Proyecto_V
         {
             string Cadena;
             string Palabra;
+            string CadenaBorrada;
             Boolean Completo = false;
             do
             {
@@ -351,6 +354,12 @@ namespace ETS_Proyecto_V
                     Console.ReadKey();
                 }
             } while (!Completo);
+
+            CadenaBorrada=Cadena.Replace(Palabra,string.Empty);
+
+            Console.Clear();
+            Console.WriteLine(CadenaBorrada);
+            Console.ReadKey();
         }
     }
 }
