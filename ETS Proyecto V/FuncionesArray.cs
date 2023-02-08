@@ -102,7 +102,7 @@ namespace ETS_Proyecto_V
                     case '4': GetTamanioArray(); GetNumerosArray(); CalcularLaMedia(NumerosArray); break;
                     case '5': GetTamanioArray(); GetNumerosArray(); OrdenarDeMenorAMayor(NumerosArray); break;
                     case '6': GetTamanioArray(); GetNumerosArray(); DesviacionTipica(NumerosArray); break;
-                    case '7': BinarizarEnBaseAUnNumero(); break;
+                    case '7': GetTamanioArray(); GetNumerosArray(); BinarizarEnBaseAUnNumero(NumerosArray); break;
                 }
             } while (!option.KeyChar.Equals('8'));
         }
@@ -236,12 +236,22 @@ namespace ETS_Proyecto_V
             Console.ReadKey();
 
         }
-        static public void BinarizarEnBaseAUnNumero()
+        static public int[] BinarizarEnBaseAUnNumero(double[] Numeros)
         {
-            int numero = PedirNumeroEntero();
-            string numeroBinario = Convert.ToString(numero, 2);
-            Console.WriteLine("{0} en binario {1}", numero, numeroBinario);
-            Console.ReadKey();
+            int[] binarizado = new int[Numeros.Length];
+            int numeroBase = PedirNumeroEntero();
+            for (int i = 0; i < Numeros.Length; i++)
+            {
+                if (numeroBase < Numeros[i])
+                {
+                    binarizado[i] = 0;
+                }
+                else
+                {
+                    binarizado[i] = 1;
+                }
+            }
+            return binarizado;
         }
         static public void MostrarVector(double[] vector)
         {
