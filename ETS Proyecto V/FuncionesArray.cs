@@ -96,13 +96,13 @@ namespace ETS_Proyecto_V
                 option = Console.ReadKey(true);
                 switch (option.KeyChar)
                 {
-                    case '1': GetTamanioArray(); GetNumerosArray(); CalcularMaximo(NumerosArray); break;
-                    case '2': GetTamanioArray(); GetNumerosArray(); CalcularMinimo(NumerosArray); break;
-                    case '3': GetTamanioArray(); GetNumerosArray(); CalcularLaMediana(NumerosArray); break;
-                    case '4': GetTamanioArray(); GetNumerosArray(); CalcularLaMedia(NumerosArray); break;
-                    case '5': GetTamanioArray(); GetNumerosArray(); OrdenarDeMenorAMayor(NumerosArray); break;
-                    case '6': GetTamanioArray(); GetNumerosArray(); DesviacionTipica(NumerosArray); break;
-                    case '7': GetTamanioArray(); GetNumerosArray(); BinarizarEnBaseAUnNumero(NumerosArray); break;
+                    case '1': SetTamanioArray(); SetNumerosArray(); CalcularMaximo(NumerosArray); break;
+                    case '2': SetTamanioArray(); SetNumerosArray(); CalcularMinimo(NumerosArray); break;
+                    case '3': SetTamanioArray(); SetNumerosArray(); CalcularLaMediana(NumerosArray); break;
+                    case '4': SetTamanioArray(); SetNumerosArray(); CalcularLaMedia(NumerosArray); break;
+                    case '5': SetTamanioArray(); SetNumerosArray(); OrdenarDeMenorAMayor(NumerosArray); break;
+                    case '6': SetTamanioArray(); SetNumerosArray(); DesviacionTipica(NumerosArray); break;
+                    case '7': SetTamanioArray(); SetNumerosArray(); BinarizarEnBaseAUnNumero(NumerosArray); break;
                 }
             } while (!option.KeyChar.Equals('8'));
         }
